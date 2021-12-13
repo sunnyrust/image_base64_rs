@@ -32,7 +32,7 @@ pub fn image_encode_base64(path: &str) -> String {
 }
 
 #[no_mangle]
-fn base64_to_vec(base64: String) -> Vec<u8> {
+pub fn base64_to_vec(base64: String) -> Vec<u8> {
     let offset = base64.find(',').unwrap_or(base64.len())+1;
     let mut value = base64;
     value.drain(..offset);
